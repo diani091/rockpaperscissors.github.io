@@ -1,5 +1,25 @@
 
 body{
-    background: url(https://images.unsplash.com/photo-1483068812158-9256e34056ac?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0a38fcaa103c6cce97251a5c2bb5ffbd&auto=format&fit=crop&w=1564&q=80);
-    font-family: Arial, Helvetica, sans-serif
+    background: url(https://images.unsplash.com/photo-1506143925201-0252c51780b0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4df73c9d1ccc60fef7374661670aaa87&auto=format&fit=crop&w=1575&q=80);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #train-title{
+  font-family: 'Pacifico', cursive;
+    font-size: 30px
+  }
+
+  #current-train{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  #add-train{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px
+  }
+
+  #tbody{
+    margin:10px;
   }
