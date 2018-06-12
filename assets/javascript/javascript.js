@@ -37,24 +37,6 @@ $("#addTrainBtn").on("click", function() {
     var firstTrain = $("#firstInput").val().trim();
     var frequency = $("#frequencyInput").val().trim();
 
-    //makes sure if there's a value on input
-    if (trainName == "") {
-        alert('Enter a train name.');
-        return false;
-    }
-    if (destination == "") {
-        alert('Enter a destination.');
-        return false;
-    }
-    if (firstTrain == "") {
-        alert('Enter a first train time.');
-        return false;
-    }
-    if (frequency == "") {
-        alert('Enter a frequency');
-        return false;
-    }
-
 	// the time difference between current time and the first train
 	var firstTrainConverted = moment(firstTrain, "hh:mm").subtract("1, years");
     var difference = currentTime.diff(moment(firstTrainConverted), "minutes");

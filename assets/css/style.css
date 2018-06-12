@@ -23,3 +23,7 @@ body{
   #tbody{
     margin:10px;
   }
+
+  .card-panel{
+    border-radius:20px;
+  }
