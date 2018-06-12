@@ -26,7 +26,6 @@ database.ref().on("child_added", function(childSnap) {
 
 database.ref().on("value", function(snapshot) {
    
-
 });
 
 //form inputs
