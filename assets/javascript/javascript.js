@@ -14,6 +14,7 @@ var currentTime = moment();
 
 database.ref().on("child_added", function(childSnap) {
 
+//takes info from input form
     var name = childSnap.val().name;
     var destination = childSnap.val().destination;
     var firstTrain = childSnap.val().firstTrain;
@@ -21,6 +22,8 @@ database.ref().on("child_added", function(childSnap) {
     var min = childSnap.val().min;
     var next = childSnap.val().next;
 
+
+    //adds input to table
     $("#trainTable > tbody").append("<tr><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + next + "</td><td>" + min + "</td></tr>");
 });
 
@@ -28,7 +31,6 @@ database.ref().on("value", function(snapshot) {
    
 });
 
-//form inputs
 $("#addTrainBtn").on("click", function() {
 
     var trainName = $("#trainNameInput").val().trim();
@@ -36,9 +38,11 @@ $("#addTrainBtn").on("click", function() {
     var firstTrain = $("#firstInput").val().trim();
     var frequency = $("#frequencyInput").val().trim();
 
-	// the time difference between current time and the first train
-	var firstTrainConverted = moment(firstTrain, "hh:mm").subtract("1, years");
+
+    var firstTrainConverted = moment(firstTrain, "hh:mm").subtract("1, years");
+    //time difference between times
     var difference = currentTime.diff(moment(firstTrainConverted), "minutes");
+
     var remainder = difference % frequency;
     var minUntilTrain = frequency - remainder;
     var nextTrain = moment().add(minUntilTrain, "minutes").format("hh:mm a");
@@ -53,8 +57,11 @@ $("#addTrainBtn").on("click", function() {
     }
 
     console.log(newTrain);
+
+    //uploads data to database
     database.ref().push(newTrain);
 
+    //clears text boxes
     $("#trainNameInput").val("");
     $("#destinationInput").val("");
     $("#firstInput").val("");
